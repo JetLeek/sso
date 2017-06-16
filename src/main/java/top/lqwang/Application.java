@@ -8,10 +8,10 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by pc on 2017/5/4.
  */
 @SpringBootApplication
-@ComponentScan(basePackages ={"top.lqwang"} )
+//@ComponentScan(basePackages ={"top.lqwang"} )
 public class Application {
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication();
+        SpringApplication springApplication = new SpringApplication(Application.class);
         springApplication.run(args);
     }
 }
