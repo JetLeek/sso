@@ -1,11 +1,13 @@
-package top.lqwang.controller;
+package top.leeklong.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import top.lqwang.util.CookieUtil;
+import top.leeklong.annotation.Access;
+import top.leeklong.enums.MenuEnum;
+import top.leeklong.util.CookieUtil;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,6 +20,7 @@ public class LoginController {
 
     @RequestMapping(value = "/login",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
     @ResponseBody
+    @Access(menu = MenuEnum.LOGIN)
     public String login(HttpServletRequest request){
         //1. 获取token
         String token = CookieUtil.getCookie(request,"access_token");

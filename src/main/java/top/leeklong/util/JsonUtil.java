@@ -1,4 +1,4 @@
-package top.lqwang.util;
+package top.leeklong.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.*;

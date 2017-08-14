@@ -1,4 +1,4 @@
-package top.lqwang.controller;
+package top.leeklong.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,11 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import top.lqwang.util.BackResult;
-import top.lqwang.util.ServiceUtil;
+import top.leeklong.util.BackResult;
+import top.leeklong.util.ServiceUtil;
 
-import static top.lqwang.util.StatusCodeEnum.CODE_1;
-import static top.lqwang.util.StatusCodeEnum.CODE_10001;
+import static top.leeklong.util.StatusCodeEnum.CODE_1;
+import static top.leeklong.util.StatusCodeEnum.CODE_10001;
 
 /**
  * Created by pc on 2017/5/4.

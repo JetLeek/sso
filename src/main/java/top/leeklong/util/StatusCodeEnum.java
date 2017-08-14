@@ -1,4 +1,4 @@
-package top.lqwang.util;
+package top.leeklong.util;
 
 
 import org.apache.commons.lang3.StringUtils;
