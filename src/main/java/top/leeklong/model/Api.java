@@ -2,6 +2,8 @@ package top.leeklong.model;/**
  * Created by pc on 2017/8/14.
  */
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +16,10 @@ import javax.persistence.Id;
  **/
 public class Api {
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GenericGenerator(name = "id", strategy = "native")
+    @GeneratedValue(generator = "id")
+    @Column(name="id", length = 32)
     private Long id;
 
     @Column(name = "api_url",length = 256)
@@ -23,13 +28,13 @@ public class Api {
     private String apiDesc;
     @Column(name = "api_view_name",length = 64)
     private String levelViewName;
-    @Column(name = "api_url",length = 256)
+    @Column(name = "api_project",length = 64)
     private String apiProject;
-    @Column(name = "api_url",length = 256)
+    @Column(name = "api_sort")
     private Integer apiSort;
-    @Column(name = "api_url",length = 256)
+    @Column(name = "api_type")
     private Integer apiType;
-    @Column(name = "api_url",length = 256)
+    @Column(name = "api_status")
     private Integer apiStatus;
 
     public Long getId() {

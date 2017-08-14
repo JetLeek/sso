@@ -2,6 +2,9 @@ package top.leeklong.model;/**
  * Created by pc on 2017/8/14.
  */
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -13,22 +16,31 @@ import javax.persistence.Id;
  **/
 public class Menu {
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GenericGenerator(name = "id", strategy = "native")
+    @GeneratedValue(generator = "id")
+    @Column(name="id", length = 32)
     private Long id;
-
+    @Column(name = "parent_id",length = 32)
     private Long parentId;
 
+    @Column(name = "menu_view_name",length = 64)
     private String menuViewName;
 
+    @Column(name = "menu_dict_name",length = 64)
     private String menuDictName;
 
+    @Column(name = "level")
     private Integer level;
 
+    @Column(name = "level_view_name",length = 64)
     private String levelViewName;
 
+    @Column(name = "menu_project",length = 64)
     private String menuProject;
 
-    private String menuStatus;
+    @Column(name = "menu_status")
+    private Integer menuStatus;
 
     public Long getId() {
         return id;
@@ -86,11 +98,11 @@ public class Menu {
         this.menuProject = menuProject;
     }
 
-    public String getMenuStatus() {
+    public Integer getMenuStatus() {
         return menuStatus;
     }
 
-    public void setMenuStatus(String menuStatus) {
+    public void setMenuStatus(Integer menuStatus) {
         this.menuStatus = menuStatus;
     }
 }

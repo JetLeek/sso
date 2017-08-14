@@ -1,5 +1,8 @@
 package top.leeklong.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,17 +16,25 @@ import java.io.Serializable;
 public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GenericGenerator(name = "id", strategy = "native")
+    @GeneratedValue(generator = "id")
+    @Column(name="id", length = 32)
     private Long id;
 
+    @Column(name = "role_name",length = 64)
     private String roleName;//角色名称
 
+    @Column(name = "role_desc",length = 256)
     private String roleDesc;
 
+    @Column(name = "role_project",length = 64)
     private String roleProject;
 
+    @Column(name = "role_type")
     private Integer roleType;
 
+    @Column(name = "role_status")
     private Integer roleStatus;
 
     public Long getId() {

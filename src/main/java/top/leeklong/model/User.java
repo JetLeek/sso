@@ -1,5 +1,6 @@
 package top.leeklong.model;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,13 +22,16 @@ public class User implements Serializable {
      * 序列化版本号，每次修改model类 应该相应的修改版本号
      */
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GenericGenerator(name = "id", strategy = "native")
+    @GeneratedValue(generator = "id")
+    @Column(name="id", length = 32)
     private Long id;
-
+    @Column(name = "username",length = 64)
     private String username;//用户名
-
+    @Column(name = "password",length = 64)
     private String password;//密码
-
+    @Column(name = "user_status")
     private Integer userStatus;
 
     public Long getId() {
