@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
+ * 角色表
+ *
  * Created by chenglong on 2017/6/16.
  */
 public class Role implements Serializable {

@@ -2,6 +2,7 @@ package top.leeklong.model;/**
  * Created by pc on 2017/8/14.
  */
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -16,18 +17,19 @@ public class Api {
 
     private Long id;
 
+    @Column(name = "api_url",length = 256)
     private String apiUrl;
-
+    @Column(name = "api_desc",length = 256)
     private String apiDesc;
-
+    @Column(name = "api_view_name",length = 64)
     private String levelViewName;
-
+    @Column(name = "api_url",length = 256)
     private String apiProject;
-
+    @Column(name = "api_url",length = 256)
     private Integer apiSort;
-
+    @Column(name = "api_url",length = 256)
     private Integer apiType;
-
+    @Column(name = "api_url",length = 256)
     private Integer apiStatus;
 
     public Long getId() {

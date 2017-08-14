@@ -11,8 +11,9 @@ import java.util.Collection;
 import java.util.List;
 
 /**
+ * 用户表
+ *
  * Created by chenglong on 2017/6/16.
- * 用户实体来实现UserDetails接口，那么我们的用户实体就是Spring Security所使用的用户
  */
 public class User implements Serializable {
 
